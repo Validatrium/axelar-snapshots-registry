@@ -1,0 +1,13 @@
+{
+  "validator": "Validatrium",
+  "network": "axelar-mainnet",
+  "snapshot": {
+    "block": 32854699,
+    "url": "https://snap.validatrium.com/axelar/32854699_backup_axelar_20260810.tar.zst",
+    "checksum_url": "https://snap.validatrium.com/axelar/32854699_backup_axelar_20260810.tar.zst.sha256",
+    "size": "223GiB",
+    "size_bytes": 239124968414,
+    "compression": "tar.zst",
+    "updated_at": "2026-08-09T23:50:41Z"
+  }
+}
