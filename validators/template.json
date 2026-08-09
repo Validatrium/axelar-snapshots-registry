@@ -1,0 +1,12 @@
+{
+  "validator": "YOUR_VALIDATOR_NAME",
+  "network": "axelar-mainnet",
+  "snapshot": {
+    "block": 0,
+    "url": "https://example.com/snapshots/axelar/<HEIGHT>_backup_axelar_<YYYYMMDD>.tar.zst",
+    "checksum_url": "https://example.com/snapshots/axelar/<HEIGHT>_backup_axelar_<YYYYMMDD>.tar.zst.sha256",
+    "size": "0G",
+    "compression": "tar.zst",
+    "updated_at": "2025-01-01T00:00:00Z"
+  }
+}
