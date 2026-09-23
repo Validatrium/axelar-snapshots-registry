@@ -2,12 +2,12 @@
   "validator": "Validatrium",
   "network": "axelar-mainnet",
   "snapshot": {
-    "block": 34950292,
-    "url": "https://snap.validatrium.com/axelar/34950292_backup_axelar_20260919.tar.zst",
-    "checksum_url": "https://snap.validatrium.com/axelar/34950292_backup_axelar_20260919.tar.zst.sha256",
-    "size": "250GiB",
-    "size_bytes": 267402043518,
+    "block": 35162928,
+    "url": "https://snap.validatrium.com/axelar/35162928_backup_axelar_20260923.tar.zst",
+    "checksum_url": "https://snap.validatrium.com/axelar/35162928_backup_axelar_20260923.tar.zst.sha256",
+    "size": "252GiB",
+    "size_bytes": 270544815679,
     "compression": "tar.zst",
-    "updated_at": "2026-09-19T19:21:21Z"
+    "updated_at": "2026-09-23T19:45:32Z"
   }
 }
