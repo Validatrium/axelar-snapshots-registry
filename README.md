@@ -31,8 +31,20 @@ This repository contains a list of public snapshots for axelar-mainnet (axelar-d
 
 ## Snapshot Format
 
+**Restoring from a snapshot assumes trust in the snapshot provider.** A node
+cannot verify that the restored data (blockstore, application state, tx index)
+is authentic — it will start from it as-is. Prefer [state-sync](#state-sync)
+when possible: it cryptographically verifies the restored state.
+
 Archives are `tar.zst` containing the **contents** of the axelard `data` directory
 (blockstore.db, state.db, application.db, tx_index.db, evidence.db, wasm/, ...).
+
+Exclusions (by design):
+
+- `priv_validator_state.json` — never distributed; validators restoring must
+  provide their own current file (double-sign risk otherwise).
+- `wasm/wasm/cache` — rebuilt by the node automatically.
+
 Extract into your `$AXELAR_HOME/data`:
 
 ```bash
@@ -40,4 +52,18 @@ aria2c -x 8 -s 8 <snapshot.url>
 aria2c -x 8 -s 8 <snapshot.checksum_url>
 sha256sum -c <archive>.sha256
 tar --use-compress-program="zstd -d -T0" -xf <archive> -C ~/.axelar/data
+```
+
+## State-Sync
+
+This provider also serves state-sync snapshots from its public RPC
+(`snapshot-interval` enabled). State-sync downloads a recent state snapshot
+and verifies it with light-client proofs, so **no trust in the provider is
+required**. Example `config.toml` `[statesync]` for consumers:
+
+```toml
+enable = true
+rpc_servers = "<this RPC>, <another trusted RPC>"
+trust_height = <recent trusted height>
+trust_hash = "<block hash at trust_height>"
 ```
